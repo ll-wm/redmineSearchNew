@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "redmine下拉搜索",
+  "version": "1.0",
+  "description": "在redmine下拉列表提供搜索功能,操作教程：右键点击需要查询的下拉字段，在弹出框中输入想查询的内容，点击查询结果修改对应字段值",
+  "author": "liuwm",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["http://192.168.2.88/*", "http://redmine.yuanian.com:8601/*"],
+  "content_scripts": [
+    {
+      "matches": ["http://192.168.2.88/*", "http://redmine.yuanian.com:8601/*"],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }, 
+  "icons": {
+    "16": "images/fe-16.png",
+    "48": "images/fe-16.png",
+    "128": "images/fe-16.png"
+  },
+  "action": {
+    "default_title": "redmine下拉搜索",
+    "default_icon": {
+      "16": "images/fe-16.png",
+      "48": "images/fe-16.png",
+      "128": "images/fe-16.png"
+    }
+  }
+}
